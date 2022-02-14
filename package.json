@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "axios": "^0.25.0",
+    "bcrypt": "^5.0.1",
+    "concurrently": "^7.0.0",
+    "create-react-app": "^5.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.1",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1"
+  },
+  "name": "groupie",
+  "version": "1.0.0",
+  "description": "chat application",
+  "main": "backend/app.js",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "author": "Taslim Raza Ansari",
+  "license": "ISC"
+}
