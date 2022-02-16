@@ -19,7 +19,7 @@ const Home = () => {
         <div className="bg-body">
             <Footer/>
         </div>
-        <div className="bg-primary rounded-b-[128px]">
+        <div className="bg-primary ">
         <FooterBottom/>
         </div>
         <div>
