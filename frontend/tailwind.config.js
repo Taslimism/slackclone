@@ -10,7 +10,8 @@ module.exports = {
       'body': '#F6EFE8',
       'primary': '#601E69',
       'white': '#FFFFFF',
-      'skyblue': '#36C5EF'
+      'skyblue': '#36C5EF',
+      'slate': '#64748B'
 
     }
   },
