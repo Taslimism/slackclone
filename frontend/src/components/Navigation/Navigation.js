@@ -2,6 +2,7 @@ import React from 'react';
 import SlackLogo from './../../assets/slack.png';
 
 import Button from '../Shared/Button';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
 
@@ -30,11 +31,15 @@ const Navigation = () => {
 
         </div>
         <div className='flex items-center text-sm font-bold'>
-            <div className='mx-4 cursor-pointer' text-sm font-bold>
-                Sign in
-            </div>
+            <Link to="/login">
+                <div className='mx-4 cursor-pointer' text-sm font-bold>
+                    Sign in
+                </div>
+            </Link>
             <div className='mx-4 text-sm font-bold '>
-                <Button text="Try For Free" css="py-2 px-6 uppercase rounded text-white bg-primary" />
+                <Link to="/register">
+                    <Button text="Try For Free" css="py-2 px-6 uppercase rounded text-white bg-primary" />
+                </Link>
             </div>
 
 

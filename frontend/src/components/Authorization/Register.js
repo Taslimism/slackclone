@@ -1,14 +1,23 @@
 import React from 'react';
 import Button from "../Shared/Button";
 
+import axios from 'axios';
+
 import SlackLogo from './../../assets/slack.png';
 import Google from './../../assets/google.png';
-import Apple from './../../assets/apple.png';
+
 
 
 
 
 const Register = () => {
+    const loginHandler = async () => {
+
+
+        const body = { "postBody": "id_token=[576956268726-rglsf6082o9il8kjce3s6u8fstk1lfjq.apps.googleusercontent.com]providerId=[google.com]", "requestUri": "[http://localhost]", "returnIdpCredential": true, "returnSecureToken": true };
+        const { data } = await axios.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp?key=${process.env.REACT_APP_FIREBASE_API_KEY}`, body);
+        console.log(data);
+    }
 
     return <>
         <div className="flex relative  flex-col justify-center text-center mx-auto p-8">
@@ -28,8 +37,8 @@ const Register = () => {
                 </p>
             </div>
             <div className="flex mt-4 flex-col  mx-auto">
-                <Button text="Sign in with Google" img={Google} css="border-2 mb-4 px-36 py-2 border-skyblue font-extrabold rounded text-skyblue bg-transparent" />
-                <Button text="Sign in with Apple" img={Apple} css="border-2 px-36 border-dark py-2 font-extrabold rounded text-dark bg-transparent" />
+                <Button onClick={loginHandler} text="Sign in with Google" img={Google} css="border-2 mb-4 px-36 py-2 border-skyblue font-extrabold rounded text-skyblue bg-transparent" />
+
             </div>
             <div className="flex mt-8 flex-row justify-center align-center" >
                 <div className="flex items-center mr-4">
